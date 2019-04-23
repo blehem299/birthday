@@ -127,8 +127,8 @@ $('document').ready(function(){
 	});	
 
 	$('#cake_fadein').click(function(){
-		$('.cake').fadeIn('slow');
-		$('.bannar').fadeOut('slow').css('display','none');
+		$('.cake').fadeIn('slow').delay(3000);
+		$('.bannar').fadeOut('slow').delay(3000).css('display','none');
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
 			$('#light_candle').fadeIn('slow').css('display','inline-block');
 		});
@@ -163,37 +163,84 @@ $('document').ready(function(){
 		$('.balloons').css('opacity','0.9');
 		$('.balloons h2').fadeIn(3000);
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
-			$('#story').fadeIn('slow');
+			$('#story').fadeIn('slow').css('display','inline-block');
 		});
 	});
 	
 	$('#story').click(function(){
-		$(this).fadeOut('slow');
-		$('.cake').fadeOut('fast').promise().done(function(){
-			$('.message').fadeIn('slow');
-		});
-		
-		var i;
+		$(this).fadeOut('slow').delay(1000);
+		$('.text-jalan').fadeIn('slow').delay(1000).promise().done(function()
+		{
+			var app = document.getElementById('judul');
 
-		function msgLoop (i) {
-			$("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
-			i=i+1;
-			$("p:nth-child("+i+")").fadeIn('slow').delay(1000);
-			if(i==50){
-				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
-					$('.cake').fadeIn('fast');
-				});
+			var typewriter = new Typewriter (app, {
+				loop : true
+			});
+			
+			typewriter.pauseFor(2000)
+				.typeString('Selamat Ulang Tahun yang ke-19 yahh Diankuu :)')
+			    .pauseFor(2000)
+			    .deleteAll()
+			    .typeString('Waktu terus berjalan, belajarlah dari masa lalu, dan jangan terlalu larut dalam kesedihan :)')
+			    .pauseFor(1000)
+			    .deleteAll()
+			    .typeString('Semoga apa yang kamu inginkan tercapai yahh dian terutama mimpi kamu')
+			    .pauseFor(100)
+			    .deleteAll()
+			    .typeString("Mimpi untuk dapat membahagiakan orang tua kamu dan meninggikan derajat mereka :')")
+			    .pauseFor(1000)
+			    .deleteAll()
+			    .typeString("Semoga juga ditahun ini kamu dapat mendapatkan kebahagiaan yang sesungguhnya :')")
+			    .pauseFor(1000)
+			    .deleteAll()
+			    .typeString("Maaf atas semua kesalahan aku ke kamu dian aku ngga akan mau nyakitin kamu lagi aku janji :')")
+			    .pauseFor(1000)
+			    .deleteAll()
+			    .typeString("Aku sekarang mencoba untuk lebih memahami kamu dian dan akan merubah sikap aku juga :')")
+			    .pauseFor(1000)
+			    .deleteAll()
+			    .typeString("Maaf yah dian cuma ini yang bisa aku kasih buat kamu :'(")
+			    .pauseFor(1000)
+			    .deleteAll()
+			    .typeString("Aku buat ini tulus buat kamu dian sebagai ungkapan spesial aku buat kamu :)")
+			    .pauseFor(1000)
+			    .deleteAll()
+			    .typeString("Dan terakhir ...")
+			    .pauseFor(1000)
+			    .deleteAll()
+			    .typeString("Aku minta maaf atas semua kebodohan aku :'(, aku harap kamu bisa nerima aku lagi sepenuhnya")
+			    .pauseFor(1000)
+			    .deleteAll()
+			    .typeString("Aku sayang kamu diann :')")
+			    .pauseFor(1000)
+			    .deleteAll()
+			    .start();
+		});
+		// $('.cake').fadeOut('fast').promise().done(function(){
+		// 	$('.message').fadeIn('slow');
+		// });
+		
+		// var i;
+
+		// function msgLoop (i) {
+		// 	$("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
+		// 	i=i+1;
+		// 	$("p:nth-child("+i+")").fadeIn('slow').delay(1000);
+		// 	if(i==50){
+		// 		$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
+		// 			$('.cake').fadeIn('fast');
+		// 		});
 				
-			}
-			else{
-				msgLoop(i);
-			}			
+		// 	}
+		// 	else{
+		// 		msgLoop(i);
+		// 	}			
 
-		});
-			// body...
-		}
+		// });
+		// 	// body...
+		// }
 		
-		msgLoop(0);
+		// msgLoop(0);
 		
 	});
 });
