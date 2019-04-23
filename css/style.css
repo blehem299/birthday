@@ -15,6 +15,20 @@ body {
 	display: none;
 }
 
+.text-jalan {
+	position: fixed;
+	bottom: 10em;
+	display: none;
+	margin: 0 auto;
+	width: 100%;
+}
+
+#judul span {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: white;
+}
+
 .navbar-bottom
 {
 	position: fixed;
@@ -1109,9 +1123,8 @@ audio {
 @media only screen and (max-width: 600px)
 {
 	.balloons {
-		width: 140px;
-		height: 143px;
-		background-size: 140px 143px;
+		/*width: 120px;
+		height: 143px;*/
 	}
 
 }
